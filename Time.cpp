@@ -45,3 +45,8 @@ Time Time::operator++(int)
 
 	return temp;
 }
+
+std::ostream operator << (std::ostream os, Time t)
+{
+	std::cout << t.hours << ":" << t.minutes << std::endl;
+}
