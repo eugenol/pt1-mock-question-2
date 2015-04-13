@@ -33,3 +33,15 @@ void Time::get(int &hours, int &minutes)
 	hours = Time::hours;
 	minutes = Time::minutes;
 }
+
+Time Time::operator++(int)
+{
+	Time temp(hours, minutes);
+
+	minutes++;
+	hours = hours + minutes / 60;
+	hours = hours % 24;
+	minutes = minutes % 60;
+
+	return temp;
+}
