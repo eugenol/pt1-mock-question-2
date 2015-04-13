@@ -1,4 +1,5 @@
 #include "Time.h"
+#include <iomanip>
 
 
 Time::Time(int hours = 0, int minutes = 0) : hours(), minutes()
@@ -46,7 +47,8 @@ Time Time::operator++(int)
 	return temp;
 }
 
-std::ostream operator << (std::ostream os, Time t)
+std::ostream & operator << (std::ostream &os, Time &t)
 {
-	std::cout << t.hours << ":" << t.minutes << std::endl;
+	std::cout << std::setfill('0') << std::setw(2) << t.hours << ":" << std::setw(2) << t.minutes << std::endl;
+	return os;
 }

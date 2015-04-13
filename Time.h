@@ -17,6 +17,6 @@ public:
 
 	//Overloaded operators
 	Time operator++(int);
-	friend std::ostream operator<<(std::ostream os, Time t);
+	friend std::ostream & operator<<(std::ostream &os, Time &t);
 };
 #endif
