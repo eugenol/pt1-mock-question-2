@@ -2,12 +2,12 @@
 #include <iomanip>
 
 
-Time::Time(int hours = 0, int minutes = 0) : hours(), minutes()
+Time::Time(int h = 0, int m = 0) : hours(h), minutes(m)
 {
-	if (hours >= 0 && hours <= 23 && minutes >= 0 && minutes <= 59)
+	if (h >= 0 && h <= 23 && m >= 0 && m <= 59)
 	{
-		Time::hours = hours;
-		Time::minutes = minutes;
+		hours = h;
+		minutes = m;
 	}
 	else
 			std::cout << "Error: invalid time entered, Time set to midnight" << std::endl;
